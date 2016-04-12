@@ -99,3 +99,12 @@ $actsAs = [
 ]
 ```
 Using this way, you need not to call `load('Containable')` in the above example.
+
+Contains with path syntax ending in a field name are not supported. Insead of:
+```php
+[ 'contain' => 'Group.name']
+```
+you should use:
+```php
+[ 'contain' => [ 'Group' => [ 'fields' => 'name' ]]]
+```
